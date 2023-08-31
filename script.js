@@ -16,7 +16,7 @@ landingTimeline
   transformOrigin: 'center',
   delay: 0.8,
 }, '-=1')
-.fromTo('.landing-img', {opacity: 0, clipPath: 'circle(5%)'}, {opacity: 1, clipPath: 'circle(100%)', duration: 1.5})
+.fromTo('.landing-img', {opacity: 0, clipPath: 'circle(0%)'}, {opacity: 1, clipPath: 'circle(100%)', duration: 1.5})
 .from('.pc-info span', {
   autoAlpha: 0,
   x: -100,
@@ -61,6 +61,23 @@ ScrollTrigger.create({
   start: 'top 50%',
   end: '100%',
 })
+
+//Form Animations
+const formAnim = gsap.timeline()
+formAnim
+.fromTo('form', {opacity: 0, clipPath: 'circle(0%)'}, {opacity: 1, clipPath: 'circle(100%)', duration: 1.5})
+
+ScrollTrigger.create({
+  animation: formAnim,
+  trigger: '.contact-me',
+  start: 'top 50%',
+  // pin: 'form',
+  // scrub: 1,
+  end: '100%',
+  // markers: true
+})
+
+
 
 // window.addEventListener('load', navAnim)
 // window.addEventListener('load', landingAnim)
